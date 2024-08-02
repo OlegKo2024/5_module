@@ -5,7 +5,7 @@ class House:
 
     def go_to(self, new_floor):
         new_floor = int(new_floor)
-        if new_floor > self.number_of_floors:
+        if new_floor > self.number_of_floors or new_floor < 1:
             print('Такого этажа не существует')
         else:
             i = 1
@@ -15,7 +15,7 @@ class House:
 
     def go_to_(self, new_floor):
         new_floor = int(new_floor)
-        if new_floor > self.number_of_floors:
+        if new_floor > self.number_of_floors or new_floor < 1:
             return print('Такого этажа не существует')
         for i in range(1, new_floor + 1):
             if new_floor <= self.number_of_floors:
@@ -23,7 +23,7 @@ class House:
 
     def _go_to_(self, new_floor):
         new_floor = int(new_floor)
-        if new_floor > self.number_of_floors:
+        if new_floor > self.number_of_floors or new_floor < 1:
             print('Такого этажа не существует')
         else:
             for i in range(1, new_floor + 1):
@@ -31,7 +31,7 @@ class House:
                     print(i)
 
     def __gt__(self, new_floor):
-        if new_floor > self.number_of_floors:
+        if new_floor > self.number_of_floors or new_floor < 1:
             return 'Такого этажа не существует'
         else:
             for i in range(1, new_floor + 1):
@@ -48,5 +48,5 @@ h2.go_to_(10)
 h1._go_to_(6)
 h2._go_to_(10)
 
-h1.__gt__(18)
+h1.__gt__(0)
 h2.__gt__(2)
